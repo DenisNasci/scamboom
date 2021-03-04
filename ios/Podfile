@@ -8,6 +8,10 @@ target 'scamboom_oficial' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'scamboom_oficialTests' do
     inherit! :complete
     # Pods for testing
