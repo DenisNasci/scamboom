@@ -12,6 +12,8 @@ target 'scamboom_oficial' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'RNTextGradientView', :path => '../node_modules/react-native-text-gradient'
+
   target 'scamboom_oficialTests' do
     inherit! :complete
     # Pods for testing
