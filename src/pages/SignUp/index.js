@@ -1,30 +1,27 @@
-import React, { useRef } from 'react';
+import React, {useRef} from 'react';
 import Background from '../../componentes/Background';
 import {Image} from 'react-native';
 
 import {
-  Container, 
-  Form, 
-  FormInput, 
-  SubmitButton, 
-  SignLink, 
+  Container,
+  Form,
+  FormInput,
+  SubmitButton,
+  SignLink,
   SignLinkText,
-  Logo
+  Logo,
 } from './styles';
 
 const SignUp = ({navigation}) => {
-
   const emailRef = useRef();
   const passowrdRef = useRef();
 
-  function handleSubmit(){
-
-  }
+  function handleSubmit() {}
 
   return (
-    <Background>  
+    <Background>
       <Container>
-        <Image souce={''}/>
+        <Image souce={''} />
 
         <Logo>ScamBoom</Logo>
         <Form>
@@ -57,12 +54,12 @@ const SignUp = ({navigation}) => {
 
           <SubmitButton onPress={handleSubmit}>Criar conta</SubmitButton>
         </Form>
-        <SignLink onPress={ () => navigation.navigate('SignIn')}>
+        <SignLink onPress={() => navigation.navigate('SignIn')}>
           <SignLinkText>Já tenho conta</SignLinkText>
         </SignLink>
       </Container>
     </Background>
   );
-}
+};
 
 export default SignUp;

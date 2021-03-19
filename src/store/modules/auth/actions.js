@@ -1,21 +1,21 @@
-export function signInResquest(email, password){
+export function signInResquest(email, senha){
   return {
     type: '@auth/SIGN_IN_REQUEST',
-    payload: {email, password},
+    payload: {email, senha},
   };
 }
 
-export function signInSucess(token, user) {
+export function signInSucess(token, usuario) {
   return {
-    type: '@auth/SIGN_IN_SUCESS',
-    payload: {token, user},
+    type: '@auth/SIGN_IN_SUCCESS',
+    payload: {token, usuario},
   };
 }
 
-export function signUpRequest(name, email, password){
+export function signUpRequest(nome, email, senha){
   return {
     type: '@auth/SIGN_UP_REQUEST',
-    payload: {name, email, password},
+    payload: {nome, email, senha},
   }
 };
 

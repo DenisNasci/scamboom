@@ -1,46 +1,42 @@
 import {all, takeLatest, call, put} from 'redux-saga/effects';
 import api from '../../../services/api';
+
 import {Alert} from 'react-native';
 import {signInSucess, signFailure} from './actions';
 
 export function* signIn({payload}) {
   try {
-    const {email, password} = payload;
+    const {email, senha} = payload;
 
-    const response = yield call(api.post, 'sessions', {
+    const response = yield call(api.post, 'sessoes', {
       email,
-      password,
+      senha,
     });
 
-    const {token, user} = response.data;
-
-    if(user.provider){
-      Alert.alert('Erro no login', 'Usuário não pode ser prestador de serviço' );
-      return;
-    }
+    const {token, usuario} = response.data;
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
-    yield put(signInSucess(token, user));
+    yield put(signInSucess(token, usuario));
 
   } catch (err) {
-    Alert.alert('Falha na autenticação', 'Verifique seus dados' );
+      Alert.alert('Falha na autenticação', 'Verifique seus dados' );
     yield put(signFailure());
   }
 }
 
 export function* signUp({payload}) {
   try {
-    const {name, email, password} = payload;
+    const {nome, email, senha} = payload;
 
-    yield call(api.post, 'users', {
-      name,
+    yield call(api.post, 'usuarios', {
+      nome,
       email,
-      password,
+      senha,
     });
 
   } catch (err) {
-    Alert.alert('Falha no cadastro', 'Verifique seus dados' );
+      Alert.alert('Falha no cadastro', 'Verifique seus dados' );
     yield put(signFailure());
   }
 }
