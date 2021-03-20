@@ -7,11 +7,14 @@ import {signInSucess, signFailure} from './actions';
 export function* signIn({payload}) {
   try {
     const {email, senha} = payload;
-
+    
+    console.log(payload);
     const response = yield call(api.post, 'sessoes', {
       email,
       senha,
     });
+
+    console.log(response.data);
 
     const {token, usuario} = response.data;
 

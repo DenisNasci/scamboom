@@ -1,5 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+
 import Background from '../../componentes/Background';
+import { useDispatch} from 'react-redux';
+import { signInResquest } from '../../store/modules/auth/actions';
+
 import {Image} from 'react-native';
 
 import {
@@ -13,10 +17,17 @@ import {
 } from './styles';
 
 const SignIn = ({navigation}) => {
+  const dispatch = useDispatch();
 
   const passwordRef = useRef();
 
-  function handleSubmit(){};
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
+
+  function handleSubmit(){
+    dispatch(signInResquest(email, senha));
+  };
 
   return (
     <Background>  
@@ -33,6 +44,8 @@ const SignIn = ({navigation}) => {
             placeholder="Digite seu email"
             returnKeyType="next"
             onSubmitEditing={() => passwordRef.current.focus()}
+            value={email}
+            onChangeText={setEmail}
           />
           <FormInput
             icon="lock-outline"
@@ -41,6 +54,8 @@ const SignIn = ({navigation}) => {
             ref={passwordRef}
             returnKeyType="send"
             onSubmitEditing={handleSubmit}
+            value={senha}
+            onChangeText={setSenha}
           />
 
           <SubmitButton onPress={handleSubmit}>Acessar</SubmitButton>
