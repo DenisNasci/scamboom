@@ -1,6 +1,8 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
+import { useDispatch } from 'react-redux';
 import Background from '../../componentes/Background';
-import {Image} from 'react-native';
+import { signUpRequest } from '../../store/modules/auth/actions';
+import {Image, Keyboard} from 'react-native';
 
 import {
   Container,
@@ -13,25 +15,41 @@ import {
 } from './styles';
 
 const SignUp = ({navigation}) => {
+
+  const dispach = useDispatch();
+
   const emailRef = useRef();
   const passowrdRef = useRef();
+  const phoneRef = useRef();
+  const dataRef = useRef();
 
-  function handleSubmit() {}
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [numero_de_celular, setNumero_de_celular] = useState('');
+  const [data_de_nascimento, setData_de_nascimento] = useState('');
+
+  function handleSubmit() {
+    dispach(signUpRequest(nome, email, senha, numero_de_celular, data_de_nascimento));
+    Keyboard.dismiss();
+  }
 
   return (
     <Background>
       <Container>
         <Image souce={''} />
 
-        <Logo>ScamBoom</Logo>
+        <Logo>Cadastro de usuário</Logo>
+
         <Form>
           <FormInput
             icon="person-outline"
             autoCorrect={false}
-            autoCapitalize="none"
             placeholder="Nome completo"
             returnKeyType="next"
             onSubmitEditing={() => emailRef.current.focus()}
+            value={nome}
+            onChangeText={setNome}
           />
           <FormInput
             icon="mail-outline"
@@ -41,7 +59,29 @@ const SignUp = ({navigation}) => {
             placeholder="Digite seu email"
             ref={emailRef}
             returnKeyType="next"
+            onSubmitEditing={() => phoneRef.current.focus()}
+            value={email}
+            onChangeText={setEmail}
+          />
+          <FormInput
+            icon="call"
+            keyboardType="phone-pad"
+            placeholder="Seu telefone"
+            ref={phoneRef}
+            returnKeyType="next"
+            onSubmitEditing={() => dataRef.current.focus()}
+            value={numero_de_celular}
+            onChangeText={setNumero_de_celular}
+          />
+          <FormInput
+            icon="today"
+            keyboardType="phone-pad"  
+            placeholder="Data de nascimento"
+            ref={dataRef}
+            returnKeyType="next"
             onSubmitEditing={() => passowrdRef.current.focus()}
+            value={data_de_nascimento}
+            onChangeText={setData_de_nascimento}
           />
           <FormInput
             icon="lock-outline"
@@ -50,6 +90,8 @@ const SignUp = ({navigation}) => {
             ref={passowrdRef}
             returnKeyType="send"
             onSubmitEditing={handleSubmit}
+            value={senha}
+            onChangeText={setSenha}
           />
 
           <SubmitButton onPress={handleSubmit}>Criar conta</SubmitButton>

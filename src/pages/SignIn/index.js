@@ -1,10 +1,10 @@
 import React, { useRef, useState } from 'react';
 
 import Background from '../../componentes/Background';
-import { useDispatch} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { signInResquest } from '../../store/modules/auth/actions';
 
-import {Image} from 'react-native';
+import {Image, Keyboard} from 'react-native';
 
 import {
   Container, 
@@ -24,16 +24,19 @@ const SignIn = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
+  const loading = useSelector(state => state.auth.loading);
+
 
   function handleSubmit(){
     dispatch(signInResquest(email, senha));
+    Keyboard.dismiss();
   };
 
   return (
     <Background>  
       <Container>
         <Image souce={''}/>
-        <Logo>ScamBoom</Logo>
+        <Logo>Scamboom</Logo>
 
         <Form>
           <FormInput
@@ -58,7 +61,7 @@ const SignIn = ({navigation}) => {
             onChangeText={setSenha}
           />
 
-          <SubmitButton onPress={handleSubmit}>Acessar</SubmitButton>
+          <SubmitButton loading ={loading} onPress={handleSubmit}>Acessar</SubmitButton>
         </Form>
         <SignLink onPress={ () => navigation.navigate('SignUp')}>
           <SignLinkText>Criar conta gratuita</SignLinkText>
