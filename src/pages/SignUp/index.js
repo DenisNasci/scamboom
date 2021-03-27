@@ -9,12 +9,9 @@ import {
   Form,
   FormInput,
   SubmitButton,
-  SignLink,
-  SignLinkText,
-  Logo,
 } from './styles';
 
-const SignUp = ({navigation}) => {
+const SignUp = () => {
 
   const dispach = useDispatch();
 
@@ -38,9 +35,6 @@ const SignUp = ({navigation}) => {
     <Background>
       <Container>
         <Image souce={''} />
-
-        <Logo>Cadastro de usuário</Logo>
-
         <Form>
           <FormInput
             icon="person-outline"
@@ -96,9 +90,6 @@ const SignUp = ({navigation}) => {
 
           <SubmitButton onPress={handleSubmit}>Criar conta</SubmitButton>
         </Form>
-        <SignLink onPress={() => navigation.navigate('SignIn')}>
-          <SignLinkText>Já tenho conta</SignLinkText>
-        </SignLink>
       </Container>
     </Background>
   );
