@@ -9,7 +9,7 @@ export function* updateProfile({payload}){
     const {nome, email, avatar_id, ... rest} = payload.data;
 
     const profile = Object.assign(
-      {nome, email}, 
+      {nome, email, avatar_id}, 
       rest.oldPassword ? rest: {}
     );
 

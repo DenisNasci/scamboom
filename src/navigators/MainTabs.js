@@ -1,10 +1,10 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import Destaques from '../pages/Destaques';
 import Favoritos from '../pages/Favoritos';
-import Mensagens from '../pages/Favoritos';
+import Mensagens from '../pages/Mensagens';
 import Perfil from '../pages/Perfil';
+import TabBarIcon from '../componentes/TabBarIcon';
 
 
 const Tab = createBottomTabNavigator();
@@ -14,28 +14,7 @@ export default () => (
         initialRouteName="Destaques" 
         activeColor="#5e1088"
         screenOptions={ ({route})=>({
-            
-            tabBarIcon: () => {
-                let icon = '';
-
-                switch (route.name) {
-                    case 'Destaques':
-                        icon = 'dashboard'
-                        break;
-                    case 'Favoritos':
-                        icon = 'favorite'
-                        break;
-                    case 'Mensagens':
-                        icon = 'chat'
-                        break;
-                    case 'Perfil':
-                        icon = 'person'
-                        break;    
-                    default:
-                        break;
-                }
-                return <Icon name={icon} size={20} color="#FFF"/>
-            }
+            tabBarIcon: () => <TabBarIcon name={route.name}/>
         }) }
         tabBarOptions={{
             //labelStyle: {
