@@ -1,8 +1,8 @@
 import React, {useRef, useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import Background from '../../componentes/Background';
 import { signUpRequest } from '../../store/modules/auth/actions';
-import {Image, Keyboard} from 'react-native';
+import {Alert, Image, Keyboard} from 'react-native';
 
 import {
   Container,
@@ -26,9 +26,16 @@ const SignUp = () => {
   const [numero_de_celular, setNumero_de_celular] = useState('');
   const [data_de_nascimento, setData_de_nascimento] = useState('');
 
+
   function handleSubmit() {
     dispach(signUpRequest(nome, email, senha, numero_de_celular, data_de_nascimento));
+    setNome('');
+    setEmail('');
+    setSenha('');
+    setNumero_de_celular('');
+    setData_de_nascimento('');
     Keyboard.dismiss();
+    Alert.alert('Sucesso','Usuário criado com sucesso!');
   }
 
   return (

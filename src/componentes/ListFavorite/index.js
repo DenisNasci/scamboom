@@ -15,7 +15,7 @@ const ListFavorite = () => {
         </Left>
 
         <TouchableOpacity onPress={() => {}}>
-            <Icon name="favorite" size={20} color="#2d34c1"></Icon>
+            <Icon name="favorite" size={20} color="#836FFF"></Icon>
         </TouchableOpacity>
     </Container>
   );

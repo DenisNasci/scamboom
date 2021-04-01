@@ -12,7 +12,6 @@ const TabBarIcon = (props) => {
             break;
         case 'Favoritos':
             icon = 'favorite';
-            badgeCount = 3;
             break;
         case 'Mensagens':
             badgeCount = 2;

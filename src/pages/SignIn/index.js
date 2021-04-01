@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 import Background from '../../componentes/Background';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,10 +25,24 @@ const SignIn = ({navigation}) => {
   const [senha, setSenha] = useState('');
 
   const loading = useSelector(state => state.auth.loading);
+  const isSigned = useSelector(state => state.auth.signed);
 
+  //Mapeia se o usuário já logou no app ou se vai logar
+  //Navigation.reset não permite que o usuário volte ao login
+  useEffect(()=>{
+    if (isSigned) {
+      navigation.reset({
+        routes: [{name: 'MainTabs'}]
+      });
+    } else {
+      navigation.navigate('SignIn');
+    }
+  }, [isSigned]);
 
   function handleSubmit(){
     dispatch(signInResquest(email, senha));
+    setEmail('');
+    setSenha('');
     Keyboard.dismiss();
   };
 

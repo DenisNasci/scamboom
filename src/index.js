@@ -8,7 +8,6 @@ import './config/ReactotronConfig';
 
 import {store, persistor} from './store';
 import MainStack from './navigators/MainStack';
-import  MainTab from './navigators/MainTabs'
 
 const App = () => {
   return (
@@ -17,7 +16,7 @@ const App = () => {
         <StatusBar barStyle="light-content" backgroundColor="#9da0eb"/>
         </PersistGate>
       <NavigationContainer>
-        <MainTab />
+        <MainStack />
       </NavigationContainer>
     </Provider>
   );

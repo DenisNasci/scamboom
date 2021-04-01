@@ -3,7 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import { enableScreens } from 'react-native-screens';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
-
+import MainTabs from './MainTabs';
 enableScreens();
 const MainStack = createStackNavigator();
 
@@ -33,6 +33,11 @@ export default () => (
                 },
                 headerTintColor: '#FFF',
             }}
+      />
+      <MainStack.Screen
+         name="MainTabs" 
+         component={MainTabs} 
+         options={{headerShown: false,}}
       />
 
     </MainStack.Navigator>
