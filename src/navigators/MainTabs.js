@@ -4,6 +4,7 @@ import Destaques from '../pages/Destaques';
 import Favoritos from '../pages/Favoritos';
 import Mensagens from '../pages/Mensagens';
 import Perfil from '../pages/Perfil';
+import Publicacao from '../pages/Publicacao';
 import TabBarIcon from '../componentes/TabBarIcon';
 
 
@@ -33,6 +34,7 @@ export default () => (
     >
         <Tab.Screen name="Destaques" component={Destaques}/>
         <Tab.Screen name="Mensagens" component={Mensagens}/>
+        <Tab.Screen name="Publicacao" component={Publicacao}/>
         <Tab.Screen name="Favoritos" component={Favoritos}/>
         <Tab.Screen name="Perfil" component={Perfil}/>
     </Tab.Navigator>

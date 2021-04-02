@@ -41,6 +41,7 @@ export function* signUp({payload}) {
       numero_de_celular,
       data_de_nascimento,
     });
+    Alert.alert('Sucesso','Agora é só fazer login!');
 
   } catch (err) {
       Alert.alert('Falha no cadastro', 'Verifique seus dados' );

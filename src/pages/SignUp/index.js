@@ -29,13 +29,14 @@ const SignUp = () => {
 
   function handleSubmit() {
     dispach(signUpRequest(nome, email, senha, numero_de_celular, data_de_nascimento));
+    
     setNome('');
     setEmail('');
     setSenha('');
     setNumero_de_celular('');
     setData_de_nascimento('');
+
     Keyboard.dismiss();
-    Alert.alert('Sucesso','Usuário criado com sucesso!');
   }
 
   return (
