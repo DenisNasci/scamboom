@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 const TabBarIcon = (props) => {
     let icon = '';
     let badgeCount = 0;
-    let tamanho = 20;
+    let tamanho = 21;
     let color = "#FFF";
 
     switch (props.name) {
@@ -16,16 +16,16 @@ const TabBarIcon = (props) => {
             icon = 'favorite';
             break;
         case 'Mensagens':
-            badgeCount = 2;
-            icon = 'chat';
+            badgeCount = 5;
+            icon = 'speaker-notes';
             break;
         case 'Perfil':
             icon = 'person';
             break;
         case 'Publicacao':
-            icon = 'app-registration';
+            icon = 'flash-on';
             color = "#FFA500"
-            tamanho = 40;
+            tamanho = 30;
             break;  
         default:
             break;

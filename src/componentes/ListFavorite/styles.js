@@ -1,16 +1,13 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
-  margin-bottom: 5px;
-  padding: 20px;
-  border-radius: 4px;
-  background: #FFF;
-
-  display: flex;
+  border-color: #ADD8E6;
+  border-bottom-width: 1px;
+  height: 80px;
+  margin-horizontal: 20px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
 `;
 
 export const Left = styled.View`
@@ -19,20 +16,20 @@ export const Left = styled.View`
     align-items: center;
 `; 
 export const ImagemItem = styled.Image`
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
 `; 
 export const Info = styled.View`
     margin-left: 15px;
 `; 
 export const Title = styled.Text`
     font-weight: bold;
-    font-size: 14px;
-    color: #333;
+    font-size: 16px;
+    color: #FFF;
 `; 
 export const Data = styled.Text`
-    color: #999;
+    color: #98FB98;
     font-size: 13px;
     margin-top: 4px;
 `;
