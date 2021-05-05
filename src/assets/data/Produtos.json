@@ -1,0 +1,57 @@
+[
+    {
+        "id": "1",
+        "titulo": "Manutenção de PCs",
+        "descricao": "Cinquenta reais a manutenção",
+        "troca_por": "Jogos de PS3",
+        "categoria_id": "Serviço",
+        "disponivel": 1,
+        "imagem": ""
+    },
+    {
+        "id": "2",
+        "titulo": "Jogos de PS4",
+        "descricao": "Call of duty BO2",
+        "troca_por": "Jogos de Xbox one",
+        "categoria_id": "Produto",
+        "disponivel": 1,
+        "imagem": ""
+    },
+    {
+        "id": "3",
+        "titulo": "PS2",
+        "descricao": "Ps2 em bom estado de conservação",
+        "troca_por": "Bicicleta ou 150R$",
+        "categoria_id": "Produto",
+        "disponivel": 1,
+        "imagem": ""
+    },
+    {
+        "id": "4",
+        "titulo": "LG4 Stylus 32GB",
+        "descricao": "Celular em bom estado de conservação. Obs.: dou volta em dinheiro.",
+        "troca_por": "Iphone 5",
+        "categoria_id": "Produto",
+        "disponivel": 1,
+        "imagem": ""
+    },
+    {
+        "id": "5",
+        "titulo": "LG4 Stylus 32GB",
+        "descricao": "Celular em bom estado de conservação. Obs.: dou volta em dinheiro.",
+        "troca_por": "Iphone 5",
+        "categoria_id": "Produto",
+        "disponivel": 1,
+        "imagem": ""
+    },
+    {
+        "id": "6",
+        "titulo": "LG4 Stylus 32GB",
+        "descricao": "Celular em bom estado de conservação. Obs.: dou volta em dinheiro.",
+        "troca_por": "Iphone 5",
+        "categoria_id": "Produto",
+        "disponivel": 1,
+        "imagem": ""
+    }
+]
+

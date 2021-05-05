@@ -5,6 +5,7 @@ import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import MainTabs from './MainTabs';
 import Chat from '../pages/Chat';
+import Post from '../pages/Post';
 
 enableScreens();
 const MainStack = createStackNavigator();
@@ -51,6 +52,25 @@ export default () => (
                 headerTitleAlign: 'center',
                 headerStyle: {
                     backgroundColor: '#9d95ff',
+                },
+                headerTitleStyle: {
+                    color: "#FFF",
+                    fontSize: 25,
+                    fontWeight: 'bold',
+                },
+                headerTintColor: '#FFF',
+                }
+            }  
+        />
+        <MainStack.Screen
+            name="Post" 
+            component={Post} 
+            options={{
+                title: 'Publicação',
+                headerShown: true,
+                headerTitleAlign: 'center',
+                headerStyle: {
+                    backgroundColor: '#9da0eb',
                 },
                 headerTitleStyle: {
                     color: "#FFF",

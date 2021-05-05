@@ -13,22 +13,23 @@ const Tab = createBottomTabNavigator();
 export default () => (
     <Tab.Navigator
         initialRouteName="Destaques" 
-        activeColor="#5e1088"
         screenOptions={ ({route})=>({
-            tabBarIcon: () => <TabBarIcon name={route.name}/>
+            tabBarIcon: ({focused}) => <TabBarIcon name={route.name} color={focused ? '#FFF': '#A9A9A9'}/>
         }) }
         tabBarOptions={{
             //labelStyle: {
-            //    fontSize: 14
-            // },
+            //   fontSize: 12
+            //},
             //activeTintColor: "#0000CD",
             //inactiveBackgroundColor: "#2d34c1",
             showLabel:false,
             keyboardHidesTabBar: true,
-            activeBackgroundColor: "#0000CD",
+            //activeBackgroundColor: "#0000CD",
             style: {
                 height: 60,
                 backgroundColor: "#2d34c1",
+                borderTopColor: "#2d34c1",
+                
             },
         }}
     >

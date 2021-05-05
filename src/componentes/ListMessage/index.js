@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { Alert } from 'react-native';
 import { Container, Imagem, Info, Nome, Msg, Post } from './styles';
 
 const ListMessage = (props) => {

@@ -6,7 +6,7 @@ const TabBarIcon = (props) => {
     let icon = '';
     let badgeCount = 0;
     let tamanho = 21;
-    let color = "#FFF";
+    let color = props.color;
 
     switch (props.name) {
         case 'Destaques':
@@ -24,7 +24,7 @@ const TabBarIcon = (props) => {
             break;
         case 'Publicacao':
             icon = 'flash-on';
-            color = "#FFA500"
+            color = "#00FF7F"
             tamanho = 30;
             break;  
         default:

@@ -3,6 +3,7 @@ import Button from '../../componentes/Button';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
+  align-items: center;
 `;
 
 export const Title = styled.Text`
@@ -16,4 +17,5 @@ export const Title = styled.Text`
 export const LogoutButtom = styled(Button)`
   margin-top: 10px;
   background: #f64c75;
+  width: 300px;
 `;
