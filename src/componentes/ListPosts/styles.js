@@ -1,18 +1,15 @@
 import styled from 'styled-components';
-import {RectButton} from 'react-native-gesture-handler';
-import Input from '../../componentes/Input';
-import Button from '../../componentes/Button';
+import { RectButton } from 'react-native-gesture-handler';
 
 export const Container = styled.SafeAreaView`
   flex: 1;
-  margin-horizontal: 20px;
 `;
 
 export const ListPost = styled.FlatList.attrs({
-  showsVerticalScrollIndicator: false,
-  numColumns: 2,
+    showsVerticalScrollIndicator: false,
+    numColumns: 2,
 })`
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 0 20px;  
 `;
 
@@ -45,19 +42,4 @@ export const Troca = styled.Text`
   font-size: 13px;
   color: #333;
   text-align: center;
-`;
-
-export const Search = styled.View`
-  margin-top: 10px;
-  margin-horizontal: 1px;
-`;
-
-export const SearchInput = styled(Input)`
-  height: 50px;
-`;
-
-export const SearchButton = styled(Button)`
-  background-color: #656bef;
-  height: 50px;
-  margin-top: 5px;
 `;

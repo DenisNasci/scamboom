@@ -7,7 +7,6 @@ import Perfil from '../pages/Perfil';
 import Publicacao from '../pages/Publicacao';
 import TabBarIcon from '../componentes/TabBarIcon';
 
-
 const Tab = createBottomTabNavigator();
 
 export default () => (

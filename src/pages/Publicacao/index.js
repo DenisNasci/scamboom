@@ -8,7 +8,6 @@ const Publicacao = () => {
     <Container>
         <Background>
           <Header titulo="Publicar"/>
-            
         </Background>
     </Container>
   );

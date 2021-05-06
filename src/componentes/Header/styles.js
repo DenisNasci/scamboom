@@ -11,7 +11,7 @@ export const Container = styled.SafeAreaView`
 export const Text = styled.Text`
     color: #FFF;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
 `;
 
 export const Edit = styled.TouchableOpacity`

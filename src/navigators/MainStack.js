@@ -6,6 +6,8 @@ import SignUp from '../pages/SignUp';
 import MainTabs from './MainTabs';
 import Chat from '../pages/Chat';
 import Post from '../pages/Post';
+import Produto from '../pages/Produto';
+import Servico from '../pages/Servico';
 
 enableScreens();
 const MainStack = createStackNavigator();
@@ -79,6 +81,18 @@ export default () => (
                 },
                 headerTintColor: '#FFF',
                 }
+            }
+        />
+        <MainStack.Screen
+            name="Produto" 
+            component={Produto} 
+            options={{headerShown: false}
+            }
+        />
+         <MainStack.Screen
+            name="Servico" 
+            component={Servico} 
+            options={{headerShown: false}
             }
         />
 
